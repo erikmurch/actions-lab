@@ -1,0 +1,17 @@
+name: Meddela Discord
+on:
+ push:
+  branches: [ main ]
+jobs:
+ notis:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Skicka meddelande
+     env:
+      WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      VEM: ${{ github.actor }}
+     REPO: ${{ github.repository }}
+     run: |
+     curl -X POST -H "Content-Type: application/json" \
+     -d "{\"content\": \"$VEM pushade till $REPO\"}" \
+    "$WEBHOOK"
