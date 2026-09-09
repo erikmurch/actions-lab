@@ -1,0 +1,9 @@
+name: säg hej
+on: workflow_dispatch
+
+jobs:
+  hej:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hälsa
+        run: echo "Hej från Github Actions!"
