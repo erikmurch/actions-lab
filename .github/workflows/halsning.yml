@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       namn:
-         description: 'Vem ska hälsas?'
-         required: true
-         default: 'världen'
-       hogljutt:
-         description: 'Skrika i stället?'
-         type: boolean
-         default: false
+        description: 'Vem ska hälsas?'
+        required: true
+        default: 'världen'
+      hogljutt:
+        description: 'Skrika i stället?'
+        type: boolean
+        default: false
          
 jobs:
   halsa:
