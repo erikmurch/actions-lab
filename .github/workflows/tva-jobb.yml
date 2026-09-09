@@ -10,11 +10,12 @@ jobs:
         run: |
           echo "resultatet av mitt hårda arbete" > resultat.txt
           ls -la
-          
-andra:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Leta efter filen
-      run: |
-        ls -la
-        cat resultat.txt
+        
+  andra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Leta efter filen
+        run: |
+          ls -la
+          cat resultat.txt
+ 
