@@ -1,24 +1,32 @@
+name: Två jobb
+
+on:
+  push:
+  workflow_dispatch:
+
 jobs:
   forsta:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Skapa en fil 
+      - name: Skapa en fil
         run: echo "resultatet av mitt hårda arbete" > resultat.txt
 
-      - name: Ladda upp
-      uses: actions/upload-artifact@v4
-      with: 
-        name: mitt-resultat
-        path: resultat.txt
+      - name: Ladda upp filen
+        uses: actions/upload-artifact@v4
+        with:
+          name: mitt-resultat
+          path: resultat.txt
 
   andra:
     runs-on: ubuntu-latest
     needs: forsta
+
     steps:
       - name: Hämta filen
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: mitt-resultat
 
-      - name: Läs den
+      - name: Läs filen
         run: cat resultat.txt
