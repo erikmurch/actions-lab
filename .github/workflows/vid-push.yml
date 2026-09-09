@@ -1,0 +1,16 @@
+name: Vid push
+on:
+ push:
+  branches: [ main ]
+jobs:
+ titta:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Vilka filer finns här?
+      run: ls -la
+    - name: Hämta koden
+      uses: actions/checkout@v4
+    - name: Vilka filer finns nu?
+      run: ls -la
+    - name: Vem gjorde detta?
+      run: echo "${{ github.actor }} pushade till ${{ github.repository }}"
