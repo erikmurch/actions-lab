@@ -11,7 +11,7 @@ jobs:
        WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
        VEM: ${{ github.actor }}
        REPO: ${{ github.repository }}
-    run: |
-     curl -X POST -H "Content-Type: application/json" \
-      -d "{\"content\": \"$VEM pushade till $REPO\"}" \
-      "$WEBHOOK"
+      run: |
+       curl -X POST -H "Content-Type: application/json" \
+       -d "{\"content\": \"$VEM pushade till $REPO\"}" \
+       "$WEBHOOK"
