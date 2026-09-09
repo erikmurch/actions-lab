@@ -1,0 +1,9 @@
+name: Kolla saker
+
+on: workflow_dispatch
+
+jobs:
+   kolla:
+     runs-on: ubuntu-latest
+     steps:
+       - run: echo "hej"
