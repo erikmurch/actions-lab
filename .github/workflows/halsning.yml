@@ -1,0 +1,29 @@
+name: Personlig hälsning
+
+on:
+  workflow_dispatch:
+    inputs:
+      namn:
+         description: 'Vem ska hälsas?'
+         required: true
+         default: 'världen'
+       hogljutt:
+         description: 'Skrika i stället?'
+         type: boolean
+         default: false
+         
+jobs:
+  halsa:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Hälsa vanligt
+         if: ${{ !inputs.hogljutt }}
+         env:
+           NAMN: ${{ inputs.namn }}
+         run: echo "Hej $NAMN!"
+         
+       - name: Skrik
+         if: ${{ inputs.hogljutt }}
+         env:
+           NAMN: ${{ inputs.namn }}
+         run: echo "HEJ $NAMN!!!" | tr '[:lower:]' '[:upper:]'
