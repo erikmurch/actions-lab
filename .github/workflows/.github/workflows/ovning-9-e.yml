@@ -1,0 +1,11 @@
+name: Notis
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  notis:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "något hände"

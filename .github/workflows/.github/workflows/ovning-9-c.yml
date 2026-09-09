@@ -1,0 +1,13 @@
+name: Två saker på en gång
+
+on: workflow_dispatch
+
+jobs:
+  kolla:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+
+      - name: Lista filer
+        run: ls -la

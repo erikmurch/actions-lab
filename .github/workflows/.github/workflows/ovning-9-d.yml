@@ -1,0 +1,13 @@
+name: Räkna rader
+
+on: workflow_dispatch
+
+jobs:
+  rakna:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hämta koden
+        uses: actions/checkout@v4
+
+      - name: Hur lång är READMEn?
+        run: wc -l README.md
