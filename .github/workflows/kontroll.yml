@@ -1,0 +1,15 @@
+name: Kontroll
+on: pull_request
+jobs:
+ kolla-readme:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v4
+   
+   - name: Kontrollera att README inte är tom
+     run: |
+      if [ ! -s README.md ]; then
+      echo "README.md saknas eller är tom!"
+      exit 1
+      fi
+      echo "README ser bra ut."
