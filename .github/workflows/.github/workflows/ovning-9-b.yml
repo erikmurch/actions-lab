@@ -1,0 +1,9 @@
+name: Fel nivå
+
+on: workflow_dispatch
+
+jobs:
+  bygg:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "bygger"
