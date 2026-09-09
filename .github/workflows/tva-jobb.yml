@@ -1,16 +1,16 @@
-jobs: 
+jobs:
   forsta:
     runs-on: ubuntu-latest
     steps:
-      - name: Skapa en fil
+      - name: Skapa en fil 
         run: echo "resultatet av mitt hårda arbete" > resultat.txt
-        
+
       - name: Ladda upp
-        uses: actions/upload-artifact@v4
-        with:
-          name: mitt-resultat
-          path: resultat.txt
-          
+      uses: actions/upload-artifact@v4
+      with: 
+        name: mitt-resultat
+        path: resultat.txt
+
   andra:
     runs-on: ubuntu-latest
     needs: forsta
@@ -18,7 +18,7 @@ jobs:
       - name: Hämta filen
         uses: actions/download-artifact@v4
         with:
-           name: mitt-resultat
-         
-       - name: Läs den
-         run: cat resultat.txt
+          name: mitt-resultat
+
+      - name: Läs den
+        run: cat resultat.txt
